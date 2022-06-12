@@ -79,14 +79,16 @@ complete -c emerge -s A -l alert -d "Add a terminal bell character ('\a') to all
 #complete -c emerge      -l alphabetical -d "Sort flag lists alphabetically"
 complete -c emerge -s a -l ask -d "Prompt the user before peforming the merge"
 # ask-enter-invalid
-# autounmask
-# autounmask-backtrack <yn>
-# autounmask-continue
-# autounmask-only
-# autounmask-unrestricted-atoms
-# autounmask-keep-keywords
-# autounmask-keep-masks
-# autounmask-write
+complete -c emerge -l autounmask -xa "y n" -d "Automatically unmask packages and generate package.use"
+complete -c emerge -l autounmask-backtrack -xa "y n"
+complete -c emerge -l autounmask-continue -xa "y n"
+complete -c emerge -l autounmask-only -xa "y n"
+complete -c emerge -l autounmask-unrestricted-atoms -xa "y n"
+complete -c emerge -l autounmask-keep-keywords -xa "y n"
+complete -c emerge -l autounmask-keep-masks -xa "y n"
+complete -c emerge -l autounmask-license -xa "y n"
+complete -c emerge -l autounmask-use -xa "y n"
+complete -c emerge -l autounmask-write -xa "y n"
 complete -c emerge -l backtrack
 complete -c emerge -s b -l buildpkg -d "Build a binary pkg additionally"
 # buildpkg-exclude
@@ -172,5 +174,35 @@ complete -c emerge -l verbose-conflicts -d "Verbose slot conflicts"
 # verbose-slot-rebuilds
 complete -c emerge -l with-bdeps -d "Pull in build time dependencies" \
     -xa "y n"
+
 # with-bdeps-auto <yn>
 # with-test-bdeps
+# accept-properties
+# accept-restrict
+# autounmask-license
+# autounmask-use
+# backtrack
+# binpkg-changed-deps
+# binpkg-respect-use
+# changed-deps-report
+# changed-slot
+# changed-use
+# complete-graph
+# ignore-built-slot-operator-deps
+# ignore-world
+# implicit-system-deps
+# jobs
+# keep-going
+# misspell-suggestions
+# regex-search-auto
+# quickpkg-direct
+# quickpkg-direct-root
+# rebuilt-binaries
+# rebuilt-binaries-timestamp
+# root
+# sysroot
+# select
+# sync-submodule
+# update
+# usepkg-exclude-live
+# j
