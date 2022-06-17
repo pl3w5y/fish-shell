@@ -89,12 +89,13 @@ complete -c emerge -l autounmask-keep-masks -xa "y n"
 complete -c emerge -l autounmask-license -xa "y n"
 complete -c emerge -l autounmask-use -xa "y n"
 complete -c emerge -l autounmask-write -xa "y n"
+complete -c emerge -l autounmask-license -xa "y n"
+complete -c emerge -l autounmask-use -xa "y n"
 complete -c emerge -l backtrack
 complete -c emerge -s b -l buildpkg -d "Build a binary pkg additionally"
 # buildpkg-exclude
 complete -c emerge -s B -l buildpkgonly -d "Only build a binary pkg"
 # changed-deps
-complete -c emerge -s U -l changed-use
 complete -c emerge -s l -l changelog -d "Show changelog of pkg. Use with --pretend"
 complete -c emerge -l color -d "Colorized output" \
     -xa "y n"
@@ -120,12 +121,13 @@ complete -c emerge -s G -l getbinpkgonly -d "As -g but don't use local infos"
 complete -c emerge -l ignore-default-opts -d "Ignore EMERGE_DEFAULT_OPTS"
 # ignore-build-slot-operator-deps <yn>
 # ignore-soname-deps <yn>
-complete -c emerge -l jobs
+complete -c emerge -s j -l jobs "The number of packages to build simultaneously, with output directed to logs"
 complete -c emerge -l keep-going
 # load-average
 # misspell-suggestion
 # newrepo
 complete -c emerge -s N -l newuse -d "Include installed pkgs with changed USE flags"
+complete -c emerge -s U -l changed-use -d "Include installed pkgs with changes to USE flags since install" 
 complete -c emerge -l noconfmem -d "Disregard merge records"
 complete -c emerge -s O -l nodeps -d "Don't merge dependencies"
 complete -c emerge -s n -l noreplace -d "Skip already installed pkgs"
@@ -141,8 +143,8 @@ complete -c emerge -s o -l onlydeps -d "Only merge dependencies"
 # prefix DIR
 complete -c emerge -s p -l pretend -d "Display what would be done without doing it"
 complete -c emerge -s q -l quiet -d "Use a condensed output"
-# quiet-build
-# quiet-fail
+complete -c emerge -l quiet-build -d "Redirect all build outputs to logs, except for build errors"
+complete -c emerge -l quiet-fail -d "Also supress build errors when other output limiting options are enabled"
 # quiet-repo-display
 # quiet-unmerge-warn
 # rage-clean
@@ -179,19 +181,17 @@ complete -c emerge -l with-bdeps -d "Pull in build time dependencies" \
 # with-test-bdeps
 # accept-properties
 # accept-restrict
-# autounmask-license
-# autounmask-use
 # backtrack
 # binpkg-changed-deps
 # binpkg-respect-use
 # changed-deps-report
 # changed-slot
-# changed-use
+## changed-use
 # complete-graph
 # ignore-built-slot-operator-deps
 # ignore-world
 # implicit-system-deps
-# jobs
+## jobs
 # keep-going
 # misspell-suggestions
 # regex-search-auto
@@ -205,4 +205,4 @@ complete -c emerge -l with-bdeps -d "Pull in build time dependencies" \
 # sync-submodule
 # update
 # usepkg-exclude-live
-# j
+## j
